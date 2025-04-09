@@ -8,14 +8,14 @@ def main():
     st.title("Data Analytics Streamlit App")
     st.write("Welcome to your data analytics dashboard!")
 
-    st.header("Upload a CSV File (<10MB)")
+    st.header("Upload a CSV File (<200MB)")
     uploaded_file = st.file_uploader("Choose a CSV file", type=["csv"])
 
     if uploaded_file is not None:
         # Check file size
         file_bytes = uploaded_file.getvalue()
         file_size_mb = len(file_bytes) / (1024 * 1024)
-        if file_size_mb > 10:
+        if file_size_mb > 200:
             st.error("File too large! Please upload a file smaller than 10MB.")
             return
 
